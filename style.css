@@ -6,15 +6,19 @@
   box-sizing: border-box;
 }
 :root {
-  --green: rgb(22, 157, 62);
+  --green: rgb(25, 128, 56);
+  --blue: hsl(249, 74%, 60%);
+  scroll-behavior: smooth;
 }
 body {
   font-family: "Mochiy Pop P One", sans-serif;
+  background-color: rgba(0, 0, 0, 0.95);
 }
 img {
   display: block;
   width: 100%;
   object-fit: cover;
+  height: 100%;
 }
 header {
   display: flex;
@@ -22,20 +26,25 @@ header {
   align-items: center;
   justify-content: center;
   gap: clamp(1.7rem, 4vw, 3rem);
-  min-height: 30vh;
-  background-color: #ffde9e;
+  min-height: 35vh;
   padding: 3rem 0;
+  background-image: linear-gradient(
+    50deg,
+    var(--green),
+    rgba(179, 137, 218, 0.6),
+    rgba(0, 0, 0, 0.6)
+  );
 }
 .logo {
   text-decoration: none;
-  color: black;
   font-size: clamp(1.7rem, 4vw, 3rem);
-  color: var(--green);
+  color: white;
 }
 .search-form {
   display: flex;
   width: 80%;
   max-width: 50rem;
+  border-radius: 1rem;
 }
 .search-input {
   width: 100%;
@@ -61,4 +70,65 @@ header {
 .search-btn:hover,
 .search-btn:focus {
   background-color: rgb(27, 105, 27);
+}
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+.gallery {
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  row-gap: 5rem;
+  column-gap: 2rem;
+}
+.gallery-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.gallery-info > * {
+  font-size: 1.4rem;
+  color: var(--blue);
+}
+.photographer a {
+  font-size: 1rem;
+  color: hsl(44.9, 81.2%, 64.5%);
+}
+.photographer span {
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+.gallery-img {
+  height: 100%;
+}
+.footer {
+  min-height: 30vh;
+  display: grid;
+  place-items: center;
+}
+.more-btn {
+  font-size: 1.2rem;
+}
+.more-btn:hover {
+  background-color: rgb(145, 141, 141);
+}
+.top-btn {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 10;
+  background-image: linear-gradient(
+    50deg,
+    var(--green),
+    rgba(179, 137, 218, 0.6),
+    rgba(0, 0, 0, 0.6)
+  );
+}
+@media screen and (min-width: 60rem) {
+  header {
+    min-height: 50vh;
+  }
 }

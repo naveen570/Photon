@@ -11,36 +11,43 @@
 body {
   font-family: "Mochiy Pop P One", sans-serif;
 }
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
 header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: clamp(1.7rem, 4vw, 3rem);
   min-height: 30vh;
   background-color: #ffde9e;
+  padding: 3rem 0;
 }
 .logo {
   text-decoration: none;
   color: black;
-  font-size: 2rem;
+  font-size: clamp(1.7rem, 4vw, 3rem);
   color: var(--green);
 }
 .search-form {
   display: flex;
-  width: 50%;
+  width: 80%;
+  max-width: 50rem;
 }
 .search-input {
   width: 100%;
-  padding: 0.5rem;
-  font-size: 2rem;
+  padding: 0.4em;
+  font-size: clamp(1.3rem, 4vw, 2rem);
   border: 2px solid var(--green);
 }
 .btn {
   border: none;
   background-color: white;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 0.5em 1em;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
   cursor: pointer;
 }
 .btn:focus {
@@ -49,4 +56,9 @@ header {
 .search-btn {
   background-color: var(--green);
   color: white;
+  font-weight: 600;
+}
+.search-btn:hover,
+.search-btn:focus {
+  background-color: rgb(27, 105, 27);
 }

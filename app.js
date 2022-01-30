@@ -31,10 +31,14 @@ function generatePhotos(data) {
     galleryDiv.innerHTML = `<div class="gallery-info">
     <p class="photographer">
       <a href="${photo.photographer_url}" target="_blank"
-        >${photo.photographer}<span><i class="fas fa-link"></i></span></a
+        >${photo.photographer}</a
       >
+      <span class="tooltip author">Author's Name</span>
     </p>
+    <div class="download-section">
     <a href=${photo.src.original} target="_blank"   class="download"><i class="fas fa-download"></i></a>
+    <span class="tooltip download">Download</span>
+    </div>
   </div >
   <div class="gallery-img"><img src=${photo.src.large} alt=${photo.alt}></img></div>
   `;
